@@ -1,0 +1,225 @@
+body {
+    background-color: black; 
+}
+
+.center-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Handjet';
+    color: greenyellow;
+}
+
+p {
+    font-family: 'Handjet';
+    color: greenyellow;
+}
+
+
+
+.handjet-h1 {
+  font-family: "Handjet", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-variation-settings:
+    "ELGR" 1,
+    "ELSH" 2;
+}
+
+.handjet-body {
+    font-family: "Handjet-body", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: Regular;
+    font-variation-settings:
+      "ELGR" 1,
+      "ELSH" 2;
+  }
+
+
+.bgimage {
+    height:25vh;
+    background: url('back.png');
+    background-size:cover;
+    position:relative;
+}
+
+body{
+	font-family: "Handjet", sans-serif;
+	background-color: #212121;
+	section{
+		width: 90%;
+		max-width: 1200px;
+		margin: 0 auto;
+		.row{
+			align-items: center;
+    		height: 100vh;
+		}
+	}
+}
+
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.col {
+    padding: 0.50rem 0.75rem;
+}
+
+@media only screen and (min-width: 600px) {
+    .col {
+        float: left;
+        width: 25%;
+    }
+}
+
+/* 3 columns (768px) */
+@media only screen and (min-width: 768px) {
+    .col {
+        width: 25%;
+    }
+}
+
+/* 4 columns (992px) */
+@media only screen and (min-width: 992px) {
+    .col {
+        width: 25%;
+    }
+}
+
+
+.card{
+    position: relative;
+	height: 400px;
+	width: 100%;
+	margin: 10px 0;
+	transition: ease all;
+	perspective: 1200px;
+	&:hover{
+		.cover{
+			transform: rotateX(0deg) rotateY(-180deg);
+			&:before{
+				transform: translateZ(30px);
+			}
+			&:after{
+				background-color: black;
+			}
+			h1{
+				transform: translateZ(100px);
+			}
+			.price{
+				transform: translateZ(60px);
+			}
+			a{
+				transform: translateZ(-60px) rotatey(-180deg);
+			}
+		}
+	}
+	
+	.cover{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		transform-style: preserve-3d;
+  	transition: ease all;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		&:before{
+			content: '';
+			position: absolute;
+			border: 5px solid greenyellow;
+			box-shadow: 0 0 12px rgba(0,0,0,.3); 
+			top:20px;
+			left:20px;
+			right:20px;
+			bottom:20px;
+			z-index: 2;
+			transition: ease all ;
+			transform-style: preserve-3d;
+			transform: translateZ(0px);
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			top:0px;
+			left:0px;
+			right:0px;
+			bottom:0px;
+			z-index: 2;
+			transition: ease all 1.3s;
+			background: rgba(0,0,0,.4);
+		}
+		&.item-a{
+			background-image: url('https://images.unsplash.com/photo-1556075798-4825dfaaf498?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+		}
+		&.item-b{
+			background-image: url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=600&q=80');
+		}
+		&.item-c{
+			background-image: url('https://images.unsplash.com/photo-1525945518069-b924046d1385?auto=format&fit=crop&w=600&q=80');
+		}
+        &.item-d{
+			background-image: url('https://images.unsplash.com/photo-1613329671121-5d1cf551cc3f?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+		}
+		h1{
+			font-weight: 600;
+			position: absolute;
+			bottom: 55px;
+			left: 50px;
+			color: greenyellow;
+			transform-style: preserve-3d;
+  		transition: ease all;
+			z-index:3;
+			font-size: 3em;
+			transform: translateZ(0px);
+		}
+		.price{
+			font-weight: 200;
+			position: absolute;
+			top: 55px;
+			right: 50px;
+			color: greenyellow;
+			transform-style: preserve-3d;
+  		transition: ease all;
+			z-index:4;
+			font-size: 2em;
+			transform: translateZ(0px);
+		}
+	}
+	.card-back{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background: #0b0f08;
+		transform-style: preserve-3d;
+  		transition: ease all;
+		transform: translateZ(-1px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		a{
+			transform-style: preserve-3d;
+			transition: ease transform, ease background .5s;
+			transform: translateZ(-1px) rotatey(-180deg);
+			background: transparent;
+			border: 1px solid greenyellow;
+			font-size: 1em;
+			color: greenyellow;
+			padding: 14px 32px;
+			width: 10em;
+			outline: none;
+			text-decoration: none;
+			&:hover{
+				background-color: greenyellow;
+				color: #0b0f08;
+			}
+		}
+	}
+}
+
