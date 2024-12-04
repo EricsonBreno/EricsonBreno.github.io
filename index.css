@@ -17,8 +17,6 @@ p {
     color: greenyellow;
 }
 
-
-
 .handjet-h1 {
   font-family: "Handjet", sans-serif;
   font-optical-sizing: auto;
@@ -37,8 +35,7 @@ p {
     font-variation-settings:
       "ELGR" 1,
       "ELSH" 2;
-  }
-
+}
 
 .bgimage {
     height:25vh;
@@ -61,10 +58,9 @@ body{
 	}
 }
 
-
 .container {
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
 }
 
 .col {
@@ -89,7 +85,6 @@ body{
         width: 25%;
     }
 }
-
 
 .card{
     position: relative;
@@ -124,7 +119,7 @@ body{
 		height: 100%;
 		width: 100%;
 		transform-style: preserve-3d;
-  	transition: ease all;
+  		transition: ease all;
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
